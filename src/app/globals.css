@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .map-image {
+    background-image: url('./assets/images/map.webp');
+    background-size: 300%;
+  }
+  .map-image:nth-child(2) {
+    background-position: 50%;
+  }
+  .map-image:nth-child(3) {
+    background-position: 100%;
+  }
+}
+
+@layer utilities {
+  .grid-background {
+    background-image: linear-gradient(to right, #18181b 1.5px, transparent 1px),
+      linear-gradient(to bottom, #18181b 1.5px, transparent 1px);
+    background-size: 30px 30px; /* Adjust the size of the grid squares */
+    background-color: #09090b; /* Adjust the background color */
+    opacity: 0.8; /* Adjust opacity if needed */
+    color: white;
+  }
+  .shadow-top-bottom {
+    box-shadow: 0 -6px 12px rgba(231, 5, 5, 0.6); /* Red shadow on top */
+    z-index: 3;
+  }
+}
